@@ -21,36 +21,36 @@ struct Car
 
 	void ShowCarState()
 	{
-		cout << "소유자ID: " << car.gamerID << endl;
-		cout << "연료량: " << car.fuelGauge << "%" << endl;
-		cout << "현재속도: " << car.curSpeed << "km/s" << endl << endl;
+		cout << "소유자ID: " << gamerID << endl;
+		cout << "연료량: " << fuelGauge << "%" << endl;
+		cout << "현재속도: " << curSpeed << "km/s" << endl << endl;
 	}
 
 	void Accel()
 	{
-		if (car.fuelGauge <= 0)
+		if (fuelGauge <= 0)
 			return;
 		else
-			car.fuelGauge -= CAR_CONST::FUEL_STEP;
+			fuelGauge -= CAR_CONST::FUEL_STEP;
 
-		if (car.curSpeed + CAR_CONST::ACC_STEP >= CAR_CONST::MAX_SPD)
+		if (curSpeed + CAR_CONST::ACC_STEP >= CAR_CONST::MAX_SPD)
 		{
-			car.curSpeed = CAR_CONST::MAX_SPD;
+			curSpeed = CAR_CONST::MAX_SPD;
 			return;
 		}
 
-		car.curSpeed += CAR_CONST::ACC_STEP;
+		curSpeed += CAR_CONST::ACC_STEP;
 	}
 
 	void Break()
 	{
-		if (car.curSpeed < CAR_CONST::BRK_STEP)
+		if (curSpeed < CAR_CONST::BRK_STEP)
 		{
-			car.curSpeed = 0;
+			curSpeed = 0;
 			return;
 		}
 
-		car.curSpeed -= CAR_CONST::BRK_STEP;
+		curSpeed -= CAR_CONST::BRK_STEP;
 	}
 };
 
