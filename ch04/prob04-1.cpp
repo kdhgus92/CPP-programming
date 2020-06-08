@@ -18,6 +18,10 @@ public:
 
 	int SaleApples(int money)
 	{
+		if(money<0){
+			cout<<"음수 전달"<<endl;
+			return;
+		}
 		int num = money / APPLE_PRICE;
 		numOfApples -= num;
 		myMoney += money;
@@ -47,7 +51,7 @@ public:
 	{
 		if (money < 0) {
 			cout << "0보다 작은값 전달" << endl;
-			false;
+			return;
 		}
 		numOfApples += seller.SaleApples(money);
 		myMoney -= money;
