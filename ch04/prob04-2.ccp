@@ -49,7 +49,7 @@ public:
 		outter.Init(outterx, outtery, outterrad);
 	}
 
-	void ShowRingInfo()
+	void ShowRingInfo() const
 	{
 		cout << "Inner Circle Info..." << endl;
 		inner.ShowCircleInfo();
