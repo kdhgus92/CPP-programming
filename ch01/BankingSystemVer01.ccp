@@ -122,7 +122,7 @@ void WithdrawMoney(void)
 
 	for (int i = 0; i < accNum; i++)
 	{
-		if (accArr[i]->GetAccID == id)
+		if (accArr[i].accID == id)
 		{
 			if (accArr[i].balance < money)
 			{
