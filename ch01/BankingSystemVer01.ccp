@@ -122,15 +122,17 @@ void WithdrawMoney(void)
 
 	for (int i = 0; i < accNum; i++)
 	{
-		if (accArr[i].balance < money)
+		if (accArr[i]->GetAccID == id)
 		{
-			cout << "잔액부족" << endl << endl;
+			if (accArr[i].balance < money)
+			{
+				cout << "잔액부족" << endl << endl;
+				return;
+			}
+			accArr[i].balance -= money;
+			cout << "출금완료" << endl << endl;
 			return;
 		}
-
-		accArr[i].balance -= money;
-		cout << "출금완료" << endl << endl;
-		return;
 	}
 	cout << "유효하지 않은 ID 입니다." << endl << endl;
 }
