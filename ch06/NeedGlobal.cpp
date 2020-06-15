@@ -20,7 +20,7 @@ public:
 	SoComplex()
 	{
 		cmxObjCnt++;
-		cout << cmxObjCnt++ << "번째 SoComplex 객체" << endl;
+		cout << cmxObjCnt << "번째 SoComplex 객체" << endl;
 	}
 	SoComplex(SoComplex& copy)
 	{
