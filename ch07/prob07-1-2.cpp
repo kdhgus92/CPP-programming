@@ -16,7 +16,7 @@ public:
 	}
 	~MyFriendInfo()
 	{
-		cout << "~MyFriendInfo()" << endl;
+		cout << "~MyFriendInfo() : " << name << endl;
 		delete[] name;
 	}
 	void ShowMyFriendInfo()
@@ -42,9 +42,9 @@ public:
 	}
 	~MyFriendDetailInfo()
 	{
+		cout << "~MyFriendDetailInfo() : "<< phone << endl;
 		delete[] addr;
 		delete[] phone;
-		cout << "~MyFriendDetailInfo()" << endl;
 	}
 	void ShowFriendDetailInfo()
 	{
@@ -58,6 +58,8 @@ int main(void)
 {
 	MyFriendDetailInfo mfdi("권오현", 29, "장안구 천천동", "010-6644-6482");
 	mfdi.ShowFriendDetailInfo();
+	MyFriendDetailInfo mfdi2("홍길동", 29, "서울시 강남구", "010-1111-1111");
+	mfdi2.ShowFriendDetailInfo();
 	return 0;
 }
 
