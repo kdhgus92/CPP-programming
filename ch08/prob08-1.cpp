@@ -99,9 +99,13 @@ public:
 	ForeignSalesWorker(const char* name, int money, double ratio, int srisk)
 		:SalesWorker(name, money, ratio), risk(srisk)
 	{}
+	int GetRiskPay() const
+	{
+		return (int)SalesWorker::GetPay()*risk/100;
+	}
 	int GetPay() const
 	{
-		return (int)SalesWorker::GetPay()*(100+risk)/100;
+		return (int)SalesWorker::GetPay()+GetRiskPay();
 	}
 	void ShowSalaryInfo() const
 	{
