@@ -101,17 +101,17 @@ public:
 	{}
 	int GetRiskPay() const
 	{
-		return (int)SalesWorker::GetPay()*risk/100;
+		return (int)(SalesWorker::GetPay()*(risk/100.0));
 	}
 	int GetPay() const
 	{
-		return (int)SalesWorker::GetPay()+GetRiskPay();
+		return SalesWorker::GetPay()+GetRiskPay();
 	}
 	void ShowSalaryInfo() const
 	{
 		ShowYourName();
 		cout << "salary: " << SalesWorker::GetPay() << endl;
-		cout <<"risk pay: " << (int)SalesWorker::GetPay() * (risk) / 100 << endl;
+		cout <<"risk pay: " << GetRiskPay() << endl;
 		cout << "sum: " << GetPay() << endl << endl;
 	}
 };
