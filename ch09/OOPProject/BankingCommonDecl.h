@@ -1,7 +1,7 @@
 /*
- * ÆÄÀÏÀÌ¸§ : BankingSystemMain.cpp
- * ÀÛ¼ºÀÚ : ±Ç¿ÀÇö
- * ¾÷µ¥ÀÌÆ® Á¤º¸: [2020, 06, 21] ÆÄÀÏ¹öÀü 0.7
+ * íŒŒì¼ì´ë¦„ : BankingCommonDecl.h
+ * ìž‘ì„±ìž : ê¶Œì˜¤í˜„
+ * ì—…ë°ì´íŠ¸ ì •ë³´: [2020, 06, 21] íŒŒì¼ë²„ì „ 0.7
 */
 
 #ifndef __BANKING_COMMON_H__
