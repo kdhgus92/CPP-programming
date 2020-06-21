@@ -85,36 +85,30 @@ Account::~Account()
 class NormalAccount : public Account
 {
 private:
-	int interestRatio;
+	int interRate;
 public:
 	NormalAccount(int ID, int money, char* name, int ir);
-	int GetInterestRatio();
 	void AddInterestRatio(int ratio);
 	virtual void Deposit(int money);
 	virtual void ShowAccInfo() const;
-	
 };
 
 NormalAccount::NormalAccount(int ID, int money, char* name, int ir)
-	:Account(ID, money, name), interestRatio(ir)
+	:Account(ID, money, name), interRate(ir)
 {}
-int NormalAccount::GetInterestRatio()
-{
-	return interestRatio;
-}
 void NormalAccount::AddInterestRatio(int ratio)
 {
-	interestRatio += ratio;
+	interRate += ratio;
 }
 void NormalAccount::Deposit(int money)
 {
-	int mon = (int)(money * (100 + interestRatio) / 100.0);
-	Account::Deposit(mon);
+	Account::Deposit(money);
+	Account::Deposit(money*(interRate/100.0));
 }
 void NormalAccount::ShowAccInfo() const
 {
 	Account::ShowAccInfo();
-	cout << "이자율: " << interestRatio << "%" << endl;
+	cout << "이자율: " << interRate << "%" << endl;
 }
 
 /*
