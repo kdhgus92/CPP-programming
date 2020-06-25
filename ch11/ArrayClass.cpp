@@ -7,6 +7,8 @@ class BoundCheckIntArray
 private:
 	int* arr;
 	int arrlen;
+	//BoundCheckIntArray(const BoundCheckIntArray& arr) { }
+	//BoundCheckIntArray& operator=(const BoundCheckIntArray& arr) { }
 public:
 	BoundCheckIntArray(int len) : arrlen(len)
 	{
@@ -32,6 +34,11 @@ int main(void)
 	BoundCheckIntArray arr(5);
 	for (int i = 0; i < 5; i++)
 		arr[i] = (i + 1) * 11;
+
+	BoundCheckIntArray cpy1(5);
+	cpy1 = arr;
+	BoundCheckIntArray copy = arr;
+
 	for (int i = 0; i < 6; i++)
 		cout << arr[i] << endl;
 	return 0;
