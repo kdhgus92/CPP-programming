@@ -18,10 +18,7 @@ private:
 	BoundCheckAccountPtrArray(const BoundCheckAccountPtrArray& arr) { }
 	BoundCheckAccountPtrArray& operator=(const BoundCheckAccountPtrArray& arr) { }
 public:
-	BoundCheckAccountPtrArray(int len) : arrlen(len)
-	{
-		arr = new ACCOUNT_PTR[len];
-	}
+	BoundCheckAccountPtrArray(int len=100);
 	ACCOUNT_PTR& operator[] (int idx);
 	ACCOUNT_PTR operator[] (int idx) const;
 	int GetArrLen() const;
