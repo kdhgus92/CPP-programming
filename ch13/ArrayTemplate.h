@@ -12,7 +12,7 @@ private:
 	T* arr;
 	int arrlen;
 	BoundCheckArray(const BoundCheckArray& arr) {}
-	BoundCheckArray = (const BoundCheckArray & arr){}
+	BoundCheckArray& operator=(const BoundCheckArray & arr){}
 public:
 	BoundCheckArray(int len);
 	T& operator[](int idx);
@@ -22,7 +22,7 @@ public:
 };
 
 template<typename T>
-BoundCheckArray<T>::BoundCheckArr(int len)
+BoundCheckArray<T>::BoundCheckArray(int len) : arrlen(len)
 {
 	arr = new T[len];
 }
