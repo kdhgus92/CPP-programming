@@ -18,7 +18,7 @@ public:
 	T& operator[](int idx);
 	T operator[](int idx) const;
 	int GetArrLen() const;
-	~BoundCheckArr();
+	~BoundCheckArray();
 };
 
 template<typename T>
@@ -50,13 +50,13 @@ T BoundCheckArray<T>::operator[] (int idx) const
 }
 
 template<typename T>
-int BoundaryCheckArray<T>::GetArrLen() const
+int BoundCheckArray<T>::GetArrLen() const
 {
 	return arrlen;
 }
 
 template<typename T>
-BoundaryCheckArray<T>::~BoundaryCheckArray()
+BoundCheckArray<T>::~BoundCheckArray()
 {
 	delete[] arr;
 }
