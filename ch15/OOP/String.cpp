@@ -78,9 +78,8 @@ ostream& operator<<(ostream& os, const String& s)
 
 istream& operator>>(istream& is, String& s)
 {
-	if (s.str != NULL)
-		delete[] s.str;
-
-	is >> s.str;
+	char str[100];
+	is >> str;
+	s = String(str);
 	return is;
 }
